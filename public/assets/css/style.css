@@ -1,0 +1,223 @@
+.upload-error
+{
+	margin: 23px; color: red;
+}
+
+.people-list .flex-stack
+{
+	padding: 10px;
+}
+
+.people-list .flex-stack:hover,.site-list .flex-stack:hover,.subcontractor-list .flex-stack:hover
+{
+	background-color: #eaf7ff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.profile-btn
+{
+	width: 31px !important;
+	height: 31px !important;
+}
+
+
+.status-Expired {
+    background-color: #A9A9A9 !important;
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+.status-ExpiredTraining {
+    background: linear-gradient(to bottom, #A9A9A9 50%, #5D3FD3 50%);
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+
+.status-Critical {
+    background-color: red !important;
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+.status-CriticalTraining {
+    background: linear-gradient(to bottom, red 50%, #5D3FD3 50%);
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+
+.status-Expiring {
+    background-color: orange !important;
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+.status-ExpiringTraining {
+    background: linear-gradient(to bottom, orange 50%, #5D3FD3 50%);
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+.status-Active,.status-ActiveTraining {
+    background-color: green !important;
+	border-radius: 4px; display: inline-block; width: 40px; height: 22px;
+}
+
+.people-active
+{
+	background-color: #eaf7ff;
+	border-radius: 5px;
+	cursor: pointer;	
+}
+
+.personal-info .flex-stack input
+{
+	padding: 1px 1px 1px 8px;
+}
+
+.personal-info .flex-stack .select2-selection
+{
+	padding: 5px 54px 5px 10px;
+}
+
+.smart-field
+{
+	padding: 1px 1px 1px 8px;
+}
+
+.no-result
+{
+	padding: 10px;
+    text-align: center;	
+}
+
+.fa-pencil, .fa-trash
+{
+	cursor: pointer;
+}
+
+/*.Planning th:first-child, .Planning td:first-child
+{
+	border-left: solid 3px #009ef7 !important;
+	padding-left: 10px;
+}
+
+.Mobilised th:first-child, .Mobilised td:first-child
+{
+	border-left: solid 3px #000 !important;
+	padding-left: 10px;
+}
+
+.Active th:first-child, .Active td:first-child
+{
+	border-left: solid 3px #7239ea !important;
+	padding-left: 10px;
+}
+
+.Approvals th:first-child, .Approvals td:first-child
+{
+	border-left: solid 3px #51cd89 !important;
+	padding-left: 10px;
+}
+
+.Handover th:first-child, .Handover td:first-child
+{
+	border-left: solid 3px #f1406c !important;
+	padding-left: 10px;
+}
+*/
+
+
+.spinner-border
+{
+	margin-left: 50%;
+    margin-top: 25%;	
+}
+
+
+
+
+.form-control.form-control-solid , .select2-selection
+{
+    background-color: #e3eaf0 !important;
+    border-color: #e3eaf0 !important;
+
+}
+
+#subcontractor-detail table td
+{
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+
+}
+
+.manage-team-table td, .manage-team-table th
+{
+	padding: 3px !important;
+	font-size: 13px;
+}
+
+.lightboxed--frame iframe
+{
+	width:1000px;
+	height: 700px;
+}
+
+.project-subops td, .project-subops th
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 13px;
+}
+
+.accordion .accordion-header, .accordion .accordion-button
+{
+	background-color: #eaf7ff;
+}
+
+.accordion .accordion-header, .accordion .accordion-button,.accordion th,.accordion td 
+{
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+
+}
+
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+.nav-tabs .nav-item .active
+{
+	background-color: #f1faff !important;
+	color: #7e8299 !important;
+
+}
+
+
+.nav-tabs .nav-item a
+{
+	border-top: solid 1px #eff2f5 !important;
+    border-left: solid 1px #eff2f5 !important;
+    border-right: solid 1px #eff2f5 !important;
+}
+
+.like-button {
+color: red;
+font-size: 20px;
+cursor: pointer;
+border-radius: 10rem;
+background-color: transparent;
+border: transparent;
+}
+
+
+        .fa-star {
+            position: absolute !important;
+            z-index: 2 !important;
+            color: #fff !important;
+            left: 36%;
+    top: 65%;
+
+        }
