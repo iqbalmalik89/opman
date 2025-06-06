@@ -164,12 +164,12 @@ class SubcontractorService
 
 
         // Create teams
-        foreach(range(1,10) as $team)
-        {
-            $request->merge(['team' => 'Team '. $team]);
-            $request->merge(['subcontractor_id' => $rec->id]);
-            $teamService->save($request);
-        }
+        // foreach(range(1,10) as $team)
+        // {
+        //     $request->merge(['team' => 'Team '. $team]);
+        //     $request->merge(['subcontractor_id' => $rec->id]);
+        //     $teamService->save($request);
+        // }
 
         return $rec;
     }

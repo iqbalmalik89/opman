@@ -241,42 +241,134 @@
 
 							<!-- <div class="row g-5 g-xl-10"> -->
 
-								<div class="col-xxl-12 mb-5 mb-xl-0">
-									<!--begin::List widget 8-->
-									<div class="card card-flush h-lg-100" style="background-color: #31596b12; border-radius: 10px;">
-										<!--begin::Header-->
-										<div class="card-header mb-5">
-											<!--begin::Title-->
-											<h3 class="card-title align-items-start flex-column">
-												<span class="card-label fw-bold text-gray-800">Documents Display </span>
+							<div class="col-xl-6">
+								<!--begin::List widget 11-->
+								<div class="card card-flush h-xl-100">
+									<!--begin::Header-->
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body" style="padding-left: 0px; padding-top: 0px;">
 
-											</h3>
-											<span>
-							
-										@if(Auth::user()->hasPermissionTo('update suboperative'))
 
-											<button type="button" onclick="showUpload();" class="btn btn-primary" style="padding:3px 10px 3px 10px;margin-top:22px;">Edit/Upload</button></span>
+										@if(!empty($data->id))
 
+											<div class="" style="padding:5px; background-color: #f1faff; margin-top: 10px; border-radius: 5px; margin-bottom: 5px;">
+												<div class="">
+													<div class="fw-semibold  text-gray-600 fs-5">Assignment
+														<span style="float:right;">
+
+														@if(Auth::user()->hasPermissionTo('add people'))
+
+															<a data-bs-toggle="modal" onclick="resetAssignForm()" data-bs-target="#assign_modal" href="javascript:void(0);"><i class="fa-solid fa-circle-plus text-info"></i> Assign</a>
+														@endif
+														</span>
+													</div>
+												</div>
+											</div>	
+
+
+											<!--begin::Card-->
+										@if(!empty($data->assignments))	
+											@foreach($data->assignments as $assignment)
+
+
+
+												<!--begin::Card header-->
+												<!--end:: Card header-->
+												<!--begin:: Card body-->
+												@if(!empty($assignment->project))
+													<div id="assignment-{{$assignment->id}}" style="border: solid 1px #faf8ff; margin-bottom:10px; padding:10px; border-radius:5px; background-color:#faf8ff">
+
+														<!--begin::Name-->
+														@if(Auth::user()->hasPermissionTo('add people'))
+
+														<div class="d-flex" style="float: right;">
+						                                    <i onclick="showEditAssignment({{$assignment->id}});" class="fs-8 me-3 d-block fas text-dark fa-pencil"></i>
+						                                    <i onclick="deleteAssignmentAlert({{$assignment->id}});" class="fs-8 me-3 d-block fas  text-danger fa-trash"></i>
+														</div>
+														@endif
+
+														<div class="fs-5 fw-bold text-dark">
+															@if ((date('Y-m-d') >= $assignment->start_date) && (date('Y-m-d') <= $assignment->end_date))
+																<i class="fa-solid text-danger fa-star"></i>
+															@endif
+															{{$assignment->project->name}}</div>
+														<!--end::Name-->
+														<!--begin::Description-->
+														<p class="text-gray-600 fw-semibold fs-7 mt-1 mb-1">
+															@if($assignment->doc && in_array($assignment->doc->status, ['Expired']))
+															<i title="Expired" class="fa-solid text-danger fa-triangle-exclamation"></i>
+															@endif
+															@if($assignment->doc)
+																{{$assignment->doc->skill->certification}}</p>
+															@endif
+														<!--end::Description-->
+														<!--begin::Info-->
+
+															<div class="fw-semibold  text-gray-800 fs-8">{{date('M j, Y', strtotime($assignment->start_date))}} - {{date('M j, Y', strtotime($assignment->end_date))}}</div>
+														<!--end::Info-->
+														<!--begin::Progress-->
+														<!-- <div class="h-4px w-100 bg-light mb-5" data-bs-toggle="tooltip" title="This project 30% completed">
+															<div class="bg-info rounded h-4px" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+														</div> -->
+														<!--end::Progress-->
+
+													</div>
+												@endif
+												<!--end:: Card body-->
+
+											@endforeach
+											<!--end::Card-->
 										@endif
-											<!--end::Title-->
-											<!--begin::Toolbar-->
-											<!-- <div class="card-toolbar">
-												<a href="../../demo1/dist/apps/ecommerce/sales/listing.html" class="btn btn-sm btn-light">View All</a>
-											</div> -->
-											<!--end::Toolbar-->
-										</div>
-										<!--end::Header-->
-										<!--begin::Body-->
-										<div class="card-body pt-0" id="documents" style="padding-left:10px; padding-right: 10px;">
-											<!--begin::Item-->
 											
-											
-											
-										</div>
-										<!--end::Body-->
+
+										@endif					
+
+
+
 									</div>
-									<!--end::LIst widget 8-->
+									<!--end::Body-->
 								</div>
+								<!--end::List widget 11-->
+							</div>
+
+
+							<div class="col-xxl-6 mb-5 mb-xl-0">
+								<!--begin::List widget 8-->
+								<div class="card card-flush h-lg-100" style="background-color: #31596b12; border-radius: 10px;">
+									<!--begin::Header-->
+									<div class="card-header mb-5">
+										<!--begin::Title-->
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label fw-bold text-gray-800">Documents Display </span>
+
+										</h3>
+										<span>
+						
+									@if(Auth::user()->hasPermissionTo('update suboperative'))
+
+										<button type="button" onclick="showUpload();" class="btn btn-primary" style="padding:3px 10px 3px 10px;margin-top:22px;">Edit/Upload</button></span>
+
+									@endif
+										<!--end::Title-->
+										<!--begin::Toolbar-->
+										<!-- <div class="card-toolbar">
+											<a href="../../demo1/dist/apps/ecommerce/sales/listing.html" class="btn btn-sm btn-light">View All</a>
+										</div> -->
+										<!--end::Toolbar-->
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body pt-0" id="documents" style="padding-left:10px; padding-right: 10px;">
+										<!--begin::Item-->
+										
+										
+										
+									</div>
+									<!--end::Body-->
+								</div>
+								<!--end::LIst widget 8-->
+							</div>
 
 
 							<!-- <div> -->

@@ -11,6 +11,11 @@ class Suboperative extends Model
 
     protected $table = 'suboperatives';
 
+    public function assignments()
+    {
+        return $this->hasMany(SubopAssignment::class, 'suboperative_id')->orderBy('start_date', 'desc');
+    }
+
     public function subcontractor()
     {
         return $this->belongsTo(Subcontractor::class, 'subcontractor_id');

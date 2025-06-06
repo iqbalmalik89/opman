@@ -7725,9 +7725,20 @@ function viewProject(projectId)
 
 function assignUser()
 {
+    var type = "";
+    if($('#suboperative_form').length)
+    {
+        type = 'subop';
+    }
+    else
+    {
+        type = 'people';
+    }
+
+
     $.ajax({
         type: getMethod(),
-        url: config.apiURL + 'project/assign?people_id=' + $('#id').val() ,
+        url: config.apiURL + 'project/assign?id=' + $('#id').val() +'&type='+ type,
         dataType:"JSON",
         data: $( globalFormId ).serialize(),
         beforeSend:function(){
